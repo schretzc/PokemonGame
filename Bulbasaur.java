@@ -2,9 +2,11 @@
 public class Bulbasaur extends Pokemon implements Attackable {
     private String attackOne = "Leech Seed";
     private String attackTwo;
+    private String name;
     public Bulbasaur(){
         super();
         this.attackOne = "Leech Seed";
+        this.name = "Bulbasaur";
     }
 
     //leechseed

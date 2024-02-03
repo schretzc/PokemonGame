@@ -2,10 +2,12 @@
 public class Pikachu extends Pokemon implements Attackable{
     private String attackOne;
     private String attackTwo;
+    private String name;
     public Pikachu(){
         super();
         this.attackOne = "Quick Attack";
         this.attackTwo = "Electroball";
+        this.name = "Pikachu";
     }
      
     //Quick Attack
