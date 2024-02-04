@@ -6,5 +6,6 @@ public class TestPokemonCardGame {
         Player c = new Player();
         c.drawHand();
         c.printHand();
+        //System.out.println(c.getDeck());
     }
 }

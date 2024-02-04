@@ -37,6 +37,7 @@ public class Player {
         Random rand = new Random();
         pokeDex.add(new Pikachu());
         pokeDex.add(new Bulbasaur());
+        pokeDex.add(new Squirtle());
         return pokeDex.get(rand.nextInt(pokeDex.size()));
     }
 
@@ -44,6 +45,7 @@ public class Player {
         Random rand = new Random();
         energyDex.add(new LeafEnergy());
         energyDex.add(new ElectricEnergy());
+        energyDex.add(new WaterEnergy());
         return energyDex.get(rand.nextInt(energyDex.size()));
     }
     
