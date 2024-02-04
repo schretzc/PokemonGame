@@ -50,19 +50,18 @@ public class Player {
     }
     
     //draws card randomly from deck and puts it in hand. 
-     public Card drawCard() { 
+     public void drawCard() { 
         Random rng = new Random();
         //System.out.println(deck.size());
         int cardIndex = rng.nextInt(deck.size() ); //find random card
         Card drawnCard = deck.get(cardIndex);
         deck.remove(cardIndex);
-        return drawnCard;
+        hand.add(drawnCard);
     }
     //Draw hand and check if pokemon is in hand
     public void drawHand(){
-        for(int i = 0; i < 7; i++) { //counting to 7
-            
-            hand.add(drawCard());
+        for(int i = 0; i < 7; i++) { //counting to 7       
+            drawCard();
         }
     }
 
@@ -76,7 +75,7 @@ public class Player {
     //returns true if so
     public void printHand(){
         for(int i = 0; i < hand.size(); i++){
-            System.out.println(hand.get(i).getName() + " ");
+            System.out.println(i+1 + ": " + hand.get(i).getName() + " ");
         }
     }
 
