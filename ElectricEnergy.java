@@ -1,6 +1,11 @@
-public class ElectricEnergy extends Card{
+public class ElectricEnergy extends Energy{
     public ElectricEnergy(){
         
+    }
+
+    @Override
+    public String getName(){
+        return "Electric Energy";
     }
     
 }

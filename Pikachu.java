@@ -2,12 +2,12 @@
 public class Pikachu extends Pokemon implements Attackable{
     private String attackOne;
     private String attackTwo;
-    private String name;
+    private String cardName;
     public Pikachu(){
         super();
         this.attackOne = "Quick Attack";
         this.attackTwo = "Electroball";
-        this.name = "Pikachu";
+        this.cardName = "Pikachu";
     }
      
     //Quick Attack
@@ -24,5 +24,9 @@ public class Pikachu extends Pokemon implements Attackable{
         int resultingHp = currentHp - 60;
         target.setHp(resultingHp);
      }
+
+     @Override
+     public String getName(){
+        return cardName;
+     }
 }
-//str att 1 =

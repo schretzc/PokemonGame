@@ -8,6 +8,8 @@ public class Player {
     private ArrayList<Card> discardPile;
     private ArrayList<Card> benchPile;
     private ArrayList<Card> activePile;
+    private ArrayList<Pokemon> pokeDex;
+    private ArrayList<Energy> energyDex;
 
     public Player(){
         deck = new ArrayList<Card>();
@@ -16,17 +18,33 @@ public class Player {
         discardPile = new ArrayList<Card>();
         benchPile = new ArrayList<Card>();
         activePile = new ArrayList<Card>();
+        pokeDex = new ArrayList<Pokemon>();
+        energyDex = new ArrayList<Energy>();
 
         //fill deck with 20 of each type
         for(int i = 0; i < 20; i++){
-            deck.add(new Energy());
-            deck.add(new Trainer());
-            deck.add(new Pokemon());
+            deck.add(randomEnergy());
+            deck.add(new ProfessorsResearch());
+            deck.add(randomPokemon());
         } 
         //fill prize pile with 6 pokemon
         for(int i = 0; i < 6; i++){
             prizePile.add(new Pokemon());
         }  
+    }
+
+    public Pokemon randomPokemon(){
+        Random rand = new Random();
+        pokeDex.add(new Pikachu());
+        pokeDex.add(new Bulbasaur());
+        return pokeDex.get(rand.nextInt(pokeDex.size()));
+    }
+
+    public Energy randomEnergy(){
+        Random rand = new Random();
+        energyDex.add(new LeafEnergy());
+        energyDex.add(new ElectricEnergy());
+        return energyDex.get(rand.nextInt(energyDex.size()));
     }
     
     //draws card randomly from deck and puts it in hand. 
@@ -54,15 +72,10 @@ public class Player {
 
     //evaluates hand to see if there is a pokemon card.
     //returns true if so
-    public boolean evaluateOpeningHand(){
-        boolean havePokemon = false;
+    public void printHand(){
         for(int i = 0; i < hand.size(); i++){
-            Card currentCard = hand.get(i);
-            if(currentCard instanceof Pokemon){
-                havePokemon = true;
-            }
+            System.out.println(hand.get(i).getName() + " ");
         }
-        return havePokemon;
     }
 
     //adds card to bench pile if bench pile is not full

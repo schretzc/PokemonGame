@@ -1,12 +1,11 @@
 
 public class Bulbasaur extends Pokemon implements Attackable {
-    private String attackOne = "Leech Seed";
+    private String attackOne;
     private String attackTwo;
-    private String name;
     public Bulbasaur(){
-        super();
+        setHp(70);
         this.attackOne = "Leech Seed";
-        this.name = "Bulbasaur";
+        this.attackTwo = "Vine Whip";
     }
 
     //leechseed
@@ -15,14 +14,21 @@ public class Bulbasaur extends Pokemon implements Attackable {
         int currentHp = target.getHp();
         int resultingHp = currentHp - 20;
         
-        
         int thisCurrentHp = this.getHp();
         this.setHp(thisCurrentHp + 20);
 
         target.setHp(resultingHp);
     }
-
+    //vine whip
     public void attackTwo(Pokemon target){
+        //deal 45 damage
+        int currentHp = target.getHp();
+        int resultingHp = currentHp - 45;
+        target.setHp(resultingHp);
+     }
 
+    @Override
+    public String getName(){
+        return "Bulbasaur";
     }
 }
