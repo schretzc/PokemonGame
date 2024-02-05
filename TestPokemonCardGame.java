@@ -13,6 +13,7 @@ public class TestPokemonCardGame {
         c.discardCard(3);
         System.out.println("");
         c.printHand();
-        //System.out.println(c.getDeck());
+        System.out.println(c.getDeck());
+
     }
 }

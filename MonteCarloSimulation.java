@@ -72,7 +72,7 @@ public boolean evaluateOpeningHand(){
             pokemonAmountAndReset(i+1);
             //for each pass of the amount of pokemon in the deck, we clear and draw a new hand 100000 times
             //clear and draw hand every pass to account for missing cards
-            for (int j = 0; j < 10000; j++){
+            for (int j = 0; j < 1000000; j++){
                 hand.clear();
                 drawHand();
                // int num = j+1;
@@ -85,7 +85,7 @@ public boolean evaluateOpeningHand(){
             pokemonAmountAndReset(i+1);
         }
         int num = i+1;
-        System.out.println("Number of Pokemon in deck " + num +  " Percentage of True: " + tCount / 100.000 + "%");
+        System.out.println("Number of Pokemon in deck " + num +  " Percentage of True: " + tCount / 10000.000 + "%");
     }
     }
 
