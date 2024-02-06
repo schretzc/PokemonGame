@@ -1,8 +1,8 @@
 public class TestPokemonCardGame {
 
     public static void main(String[] args){
-       //MonteCarloSimulation test = new MonteCarloSimulation();
-      // test.runMonte();
+        //MonteCarloSimulation test = new MonteCarloSimulation();
+        //test.runMonte();
         Player c = new Player();
         c.drawHand();
         c.drawPrizePile();
@@ -16,6 +16,8 @@ public class TestPokemonCardGame {
         System.out.println("");
         c.printHand();
         //System.out.println(c.getDeck());
+
+
 
     
     }
