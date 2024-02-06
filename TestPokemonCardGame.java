@@ -5,6 +5,8 @@ public class TestPokemonCardGame {
       // test.runMonte();
         Player c = new Player();
         c.drawHand();
+        c.drawPrizePile();
+        System.out.println(c.getPrizePile());
         c.printHand();
         c.drawCard();
         c.drawCard();
@@ -14,5 +16,7 @@ public class TestPokemonCardGame {
         System.out.println("");
         c.printHand();
         //System.out.println(c.getDeck());
+
+    
     }
 }

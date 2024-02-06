@@ -28,11 +28,11 @@ public class Player {
             deck.add(randomPokemon());
         } 
         //fill prize pile with 6 pokemon
-        for(int i = 0; i < 6; i++){
-            prizePile.add(new Pokemon());
-        }  
+        //for(int i = 0; i < 6; i++){
+         //   prizePile.add(new Pokemon());
+       // }  
     }
-
+    //stores all pokemon in an arraylist and randomly returns one.
     public Pokemon randomPokemon(){
         Random rand = new Random();
         pokeDex.add(new Pikachu());
@@ -40,7 +40,7 @@ public class Player {
         pokeDex.add(new Squirtle());
         return pokeDex.get(rand.nextInt(pokeDex.size()));
     }
-
+    //stores all energy type cards in an arraylist and randomly returns one
     public Energy randomEnergy(){
         Random rand = new Random();
         energyDex.add(new LeafEnergy());
@@ -48,6 +48,8 @@ public class Player {
         energyDex.add(new WaterEnergy());
         return energyDex.get(rand.nextInt(energyDex.size()));
     }
+
+    
     
     //draws card randomly from deck and puts it in hand. 
      public void drawCard() { 
@@ -58,7 +60,20 @@ public class Player {
         deck.remove(cardIndex);
         hand.add(drawnCard);
     }
-    //Draw hand and check if pokemon is in hand
+
+    //draw the seven card for the prize pile
+    public void drawPrizePile(){
+        Random rng = new Random();
+        //System.out.println(deck.size());
+        for(int i = 0; i < 6; i++) { //counting to 7       
+            int cardIndex = rng.nextInt(deck.size() ); //find random card
+            Card drawnCard = deck.get(cardIndex); 
+            deck.remove(cardIndex);
+            prizePile.add(drawnCard);
+        }
+    }
+
+    //Draw hand of seven cards
     public void drawHand(){
         for(int i = 0; i < 7; i++) { //counting to 7       
             drawCard();
