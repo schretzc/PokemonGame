@@ -1,8 +1,8 @@
 
-public class Trainer extends Card {
+public class Trainer extends Card implements TrainerAction {
     
-    
-    public Trainer(){
+    public void playable(Player player){
+
+    }
         
     }
-}

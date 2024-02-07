@@ -14,6 +14,7 @@ public class Squirtle extends Pokemon implements Attackable {
         int currentHp = target.getHp();
         int resultingHp = currentHp - 10;
         target.setHp(resultingHp);
+        System.out.println("Squirtle used Tackle on " + target.getName() + " dealing 10 damage!");
      }
      //Rain Splash
         public void attackTwo(Pokemon target){
@@ -21,6 +22,7 @@ public class Squirtle extends Pokemon implements Attackable {
         int currentHp = target.getHp();
         int resultingHp = currentHp - 20;
         target.setHp(resultingHp);
+        System.out.println("Squirtle used Rain Splash on " + target.getName() + " dealing 20 damage!");
      }
 
      @Override

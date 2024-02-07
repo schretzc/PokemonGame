@@ -10,8 +10,10 @@ public class Player {
     private ArrayList<Card> activePile;
     private ArrayList<Pokemon> pokeDex;
     private ArrayList<Energy> energyDex;
+    private ArrayList<Trainer> trainerDex;
+    private String name;
 
-    public Player(){
+    public Player(String name){
         deck = new ArrayList<Card>();
         hand = new ArrayList<Card>();
         prizePile = new ArrayList<Card>();
@@ -20,11 +22,13 @@ public class Player {
         activePile = new ArrayList<Card>();
         pokeDex = new ArrayList<Pokemon>();
         energyDex = new ArrayList<Energy>();
+        trainerDex = new ArrayList<Trainer>();
+        this.name = name;
 
         //fill deck with 20 of each type
         for(int i = 0; i < 20; i++){
             deck.add(randomEnergy());
-            deck.add(new ProfessorsResearch());
+            deck.add(randomTrainer());
             deck.add(randomPokemon());
         } 
         //fill prize pile with 6 pokemon
@@ -47,6 +51,14 @@ public class Player {
         energyDex.add(new ElectricEnergy());
         energyDex.add(new WaterEnergy());
         return energyDex.get(rand.nextInt(energyDex.size()));
+    }
+
+    //stores all pokemon in an arraylist and randomly returns one.
+    public Trainer randomTrainer(){
+        Random rand = new Random();
+        trainerDex.add(new ProfessorsResearch());
+        trainerDex.add(new NestBall());
+        return trainerDex.get(rand.nextInt(trainerDex.size()));
     }
 
     
@@ -153,6 +165,10 @@ public class Player {
 
     public ArrayList<Card> getActivePile(){
         return activePile;
+    }
+
+    public String getName(){
+        return name;
     }
      
 }

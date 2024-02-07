@@ -7,6 +7,13 @@ public class Pokemon extends Card {
         this.hp = 70;
         
     }
+
+    public void attackOne(){
+        
+    }
+    public void attackTwo(){
+    }
+    
     public int getHp(){
         return hp;
     }

@@ -18,6 +18,8 @@ public class Bulbasaur extends Pokemon implements Attackable {
         this.setHp(thisCurrentHp + 20);
 
         target.setHp(resultingHp);
+        System.out.println("Bulbasaur used Leech Seed on " + target.getName() + " dealing 20 damage");
+        System.out.println("Bulbasaur healed 20 hp");
     }
     //vine whip
     public void attackTwo(Pokemon target){
@@ -25,6 +27,7 @@ public class Bulbasaur extends Pokemon implements Attackable {
         int currentHp = target.getHp();
         int resultingHp = currentHp - 45;
         target.setHp(resultingHp);
+        System.out.println("Bulbasaur used Vine Whip on " + target.getName() + " dealing 45 damage");
      }
 
     @Override
