@@ -41,6 +41,15 @@ public class PokemonCardGame {
     public void printCardStats(Player player){
     }
 
+    public void checkWinner(){
+        if (playerOne.getPrizePile().size() == 0){
+            System.out.println(playerTwo.getName() + " has won the game!!!");
+        }
+        if(playerTwo.getPrizePile().size() == 0){
+            System.out.println(playerOne.getName() + " has won the game!!!");
+        }
+    }
+
     public void setupGame(){
     }
 
@@ -48,7 +57,9 @@ public class PokemonCardGame {
         // while (playerOne.getPrizePile().size() > 0 || playerTwo.getPrizePile().size() > 0){
             // playerOne.turn();
             // playerTwo.turn();
+            //
     // }
+    // setupGame();
 // }
 
         public void runGame(){
@@ -75,7 +86,7 @@ public class PokemonCardGame {
 
         while(pikaTarget.getHp() > 0){
             pikaMain.attackOne(pikaTarget);
-            System.out.println("Pika Target Hp:" + pikaTarget.getHp());
+            //System.out.println("Pika Target Hp:" + pikaTarget.getHp());
             if (pikaTarget.getHp() == 0){
                 System.out.println("Pika Target HP:" + pikaTarget.getHp());
                 System.out.println("Pika Target has fainted!!!");
